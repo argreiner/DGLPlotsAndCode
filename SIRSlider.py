@@ -39,7 +39,9 @@ from scipy.integrate import odeint # Scipy integrate is for numerical integratio
 
 
 # %% [markdown]
-# # Markup cell
+# # Markdown cell
+#
+#
 
 # %%
 # Update the values to plot
@@ -104,6 +106,7 @@ pos=odeint(func,n0,t) # Integrate the system of differential equations
 
 # %%
 # %matplotlib notebook
+# Note the cell magic must be on the first line in a cell
 fig, ax = plt.subplots()
 plt.subplots_adjust(left=0.25, bottom=0.4)
 #
@@ -114,9 +117,12 @@ r=pos.T[2]
 ls, = ax.plot(t,s, lw=2, label='Suszeptible')
 li, = ax.plot(t,i, lw=2, label='Infected')
 lr, = ax.plot(t,r, lw=2, label='Recovered')
-#ax.plot(t,s,lw=2)
-plt.legend()
+#
+ax.set(title='SIR model')
+ax.set(xlabel='Time')
+ax.set(ylabel='Population')
 ax.margins(x=0)
+plt.legend()
 #
 axcolor = 'lightgoldenrodyellow'
 # rectangles for sliders
@@ -142,9 +148,6 @@ button = Button(resetax, 'Reset', color=axcolor, hovercolor='0.975')
 button.on_clicked(reset)
 #
 plt.show()
-
-# %%
-np.linspace(0,1.,11)
 
 # %% [markdown]
 # # Dies ist eine markdown cell

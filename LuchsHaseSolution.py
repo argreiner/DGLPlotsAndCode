@@ -54,7 +54,7 @@ ax1.set_ylabel("Predator")
 ax1.plot(x,y)
 # Same game for the amplitudes
 ax2.set_title('Amplitude x(t) and y(t)') # This sets the title of the left plot
-#ax2.set_aspect(18)       # set the aspect ratio of the graph
+#ax2.set_aspect(4)       # set the aspect ratio of the graph
 ax2.yaxis.tick_right()
 ax2.yaxis.set_label_position("right")
 ax2.set_xlabel("Time [arb. units]")
